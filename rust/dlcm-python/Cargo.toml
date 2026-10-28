@@ -1,0 +1,37 @@
+[package]
+name = "dlcm-python"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "_rust_ops"
+crate-type = ["cdylib"]
+
+[dependencies]
+dlcm-core = { path = "../dlcm-core" }
+pyo3 = { version = "0.30", features = ["extension-module"] }
+numpy = "0.30"
+#candle-core = "0.11.0"
+candle-core = { version = "0.11.0", features = ["cuda"] }
+
+
+[lints.clippy]
+pedantic = { level = "deny", priority = -1 }
+nursery = { level = "deny", priority = -1 }
+# DENY PANICS:
+unwrap_used = "deny"
+expect_used = "deny"
+indexing_slicing = "deny"
+arithmetic_side_effects = "deny"
+unreachable = "deny"
+unimplemented = "deny"
+unchecked_time_subtraction = "deny"
+todo = "deny"
+string_slice = "deny"
+panic_in_result_fn = "deny"
+panic = "deny"
+exit = "deny"
+as_conversions = "deny"
+
+[lints.rust]
+unused_imports = "allow"

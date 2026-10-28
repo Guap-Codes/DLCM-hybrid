@@ -1,0 +1,83 @@
+# ================================
+# Python & PyTorch
+# ================================
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# PyTorch / Lightning Checkpoints & Weights 
+# CRITICAL: Never commit multi-MB/GB weights or training artifacts to Git
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.bin
+checkpoints/
+lightning_logs/
+
+# ================================
+# Rust & Cargo (Maturin / Candle)
+# ================================
+# Ignore all Rust build artifacts and compiled wheels
+**/target/
+**/*.rs.bk
+
+# Compiled Python extensions (Rust shared libraries)
+*.so
+*.dylib
+*.dll
+
+# NOTE: Cargo.lock is intentionally NOT ignored here!
+# Because `dlcm-inference` is a binary crate (it has a main.rs), 
+# Cargo.lock MUST be committed to ensure reproducible builds.
+
+# ================================
+# Project Specific & Artifacts
+# ================================
+# Colab deployment tarballs
+*.tar.gz
+dlcm-payload.*
+
+# Tokenizer downloads (if the Rust CLI caches them locally)
+tokenizer.json
+vocab.json
+merges.txt
+
+# ================================
+# Environment & Secrets
+# ================================
+.env
+.env.local
+
+# ================================
+# IDE & OS Files
+# ================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db

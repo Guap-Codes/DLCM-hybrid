@@ -1,0 +1,8 @@
+# Test 1: Shapes & Gradients
+PYTHONPATH=./python python3 tests/python/test_shapes.py
+
+# Test 2: Distributed Global Parser
+PYTHONPATH=./python torchrun --nproc_per_node=2 tests/python/test_global_parser.py
+
+# Test 3: The Trainer Loop (This was the one that was failing)
+PYTHONPATH=./python python3 tests/python/test_trainer.py

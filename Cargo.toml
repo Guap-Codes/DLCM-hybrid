@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "rust/dlcm-core",
+    "rust/dlcm-inference",
+    "rust/dlcm-python",
+]
+resolver = "2"

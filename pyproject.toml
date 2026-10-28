@@ -1,0 +1,18 @@
+[build-system]
+requires = ["maturin>=1.4,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "dlcm"
+version = "0.1.0"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+]
+
+[tool.maturin]
+manifest-path = "rust/dlcm-python/Cargo.toml"
+python-source = "python"
+module-name = "dlcm._rust_ops"
+features = ["pyo3/extension-module"]

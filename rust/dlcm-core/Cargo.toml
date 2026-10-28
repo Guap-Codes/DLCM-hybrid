@@ -1,0 +1,25 @@
+[package]
+name = "dlcm-core"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+candle-core = { version = "0.11.0", features = ["cuda"] }
+#candle-core = "0.11.0"
+candle-nn = "0.11.0"
+
+[lints.clippy]
+pedantic = { level = "deny", priority = -1 }
+nursery = { level = "deny", priority = -1 }
+unwrap_used = "deny"
+expect_used = "deny"
+indexing_slicing = "deny"
+arithmetic_side_effects = "deny"
+unreachable = "deny"
+unimplemented = "deny"
+todo = "deny"
+panic_in_result_fn = "deny"
+panic = "deny"
+
+[lints.rust]
+unused_imports = "allow" 
